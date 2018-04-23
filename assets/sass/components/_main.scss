@@ -1,26 +1,26 @@
 .split {
-    background-color: #f2f4f4;
+    // background-color: #f2f4f4;
+    background: url('assets/images/split-bg.jpg') no-repeat;
+    background-position-x: 82%;
+    background-size: cover;
+    &__content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10%;
+    }
     &__wrapper {
-        // display: flex;
-        // flex-flow: column;
-        // justify-content: center;
-        // align-items: center;
         display: grid;
         grid-template-rows: [title] auto [content] auto [image] auto [newsletter] auto;
         grid-template-areas: "title" "description" "main-image" "newsletter";
-        padding: 54px 10% 58px;
+        padding: 54px 0 58px;
     }
-    // &__logo {
-    //
-    //     // margin-bottom: 52px;
-    // }
     &__title-wrap {
        grid-area: title;
        margin-bottom: 46px;
 
     }
     &__title {
-        // padding: 0 20px;
         text-align: center;
         font-family: $avenir-lite;
         font-size: 38px;
@@ -104,12 +104,15 @@
             display: block;
             height: 54px;
             width: 100%;
+            padding-top: 4px;
             font-family: $avenir-cn;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: bold;
             color: $white;
             background-image: linear-gradient(to top, #00b489 50%, #33c3a1);
             border-radius: 6px;
+            letter-spacing: 0.4px;
+            border: none;
         }
     }
     // Footer section
@@ -158,6 +161,9 @@
 
 @include tablet() {
     .split {
+      height: auto;
+      min-height: 90%;
+      background-position-x: 90%;
         &__wrapper {
             padding: 0px 10% 60px;
         }
@@ -227,13 +233,17 @@
 
 @include desktop() {
   .split {
-    height: calc( 100vh - 15vh);
+    height: auto;
+    min-height: 85%;
+    width: 100%;
+    padding: 0 10%;
     &__wrapper {
       grid-template-columns: 600px [main-image] 100px [margin-col] 516px [content];
       grid-template-rows: [first-row] auto [second-row] auto [newsletter] auto;
       grid-template-areas: " main-image . title"
                             " main-image . description"
                             " main-image . newsletter";
+      padding: 0px 0% 60px;
     }
     &__title-wrap {
       width: 100%;
@@ -271,7 +281,7 @@
      }
     }
     &__footer {
-      height: 15vh;
+      height: 140px;
 
     }
   }
@@ -284,6 +294,14 @@
   .split {
     &__content {
       margin-top: 4%;
+    }
+  }
+}
+@include desktop-xlg() {
+  .split {
+    height: calc(100vh - 140px );
+    &__content {
+      margin-top: 10%;
     }
   }
 }
