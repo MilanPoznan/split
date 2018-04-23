@@ -1,5 +1,4 @@
 .split {
-    // background-color: #f2f4f4;
     background: url('assets/images/split-bg.jpg') no-repeat;
     background-position-x: 82%;
     background-size: cover;
@@ -17,8 +16,8 @@
     }
     &__title-wrap {
        grid-area: title;
-       margin-bottom: 46px;
-
+       max-width: 320px;
+       margin: 0 auto 46px;
     }
     &__title {
         text-align: center;
@@ -34,15 +33,22 @@
         display: inline;
         grid-area: description;
         padding: 0 6%;
-        margin-bottom: 44px;
         &-item {
+            position: relative;
             display: flex;
-            align-items: center;
             margin-bottom: 34px;
             font-family: $source-regular;
             font-size: 18px;
-            line-height: 0.89;
             color: $text-light-gray;
+            line-height: 1.25;
+            .dott-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        &-item:last-of-type {
+            margin-bottom: 59px;
         }
         &-dott {
             position: relative;
@@ -76,6 +82,7 @@
     &__newsletter {
         width: 100%;
         max-width: 362px;
+        margin: auto;
         grid-area: newsletter;
         &-text {
             margin-bottom: 25px;
@@ -118,10 +125,6 @@
     // Footer section
     &__footer {
         background-color: $white;
-        // position: relative;
-        // left: 0;
-        // bottom: 0;
-        // width: 100%;
         &-wrapper {
             display: flex;
             flex-flow: column;
@@ -169,7 +172,7 @@
         }
         &__title-wrap {
           max-width: 350px;
-          width: 60%;
+          width: 70%;
           margin: 0 auto;
         }
 
@@ -182,7 +185,7 @@
         &__description {
             display: flex;
             flex-wrap: wrap;
-            max-width: 540px;
+            max-width: 620px;
             padding: 0 50px 44px;
             margin:  0 auto;
             &-item {
@@ -236,9 +239,9 @@
     height: auto;
     min-height: 85%;
     width: 100%;
-    padding: 0 10%;
+    padding: 0%;
     &__wrapper {
-      grid-template-columns: 600px [main-image] 100px [margin-col] 516px [content];
+      grid-template-columns: 600px [main-image] 100px [margin-col] 540px [content];
       grid-template-rows: [first-row] auto [second-row] auto [newsletter] auto;
       grid-template-areas: " main-image . title"
                             " main-image . description"
@@ -255,13 +258,17 @@
 
     }
     &__description {
-      padding-left: 0px;
+      padding: 0 0 44px;
       &-dott {
         margin: 0 15px 0 0;
       }
     }
+    &__main-image {
+        margin-top: 40px;
+    }
     &__cards-image {
       height: 367px;
+      width: 593px;
     }
     &__newsletter {
       margin: 0;
@@ -282,7 +289,9 @@
     }
     &__footer {
       height: 140px;
-
+        &-wrapper {
+            padding: 0 76px;
+        }
     }
   }
   form {
@@ -301,7 +310,7 @@
   .split {
     height: calc(100vh - 140px );
     &__content {
-      margin-top: 10%;
+      margin-top: 8%;
     }
   }
 }
