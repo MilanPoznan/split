@@ -17,3 +17,12 @@
     }
   }
 }
+
+@include desktop() {
+  .header {
+    &__wrapper {
+      justify-content: flex-start;
+      padding-left: 74px;
+    }
+  }
+}
