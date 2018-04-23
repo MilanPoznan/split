@@ -168,7 +168,7 @@
       min-height: 90%;
       background-position-x: 90%;
         &__wrapper {
-            padding: 0px 10% 60px;
+            padding: 0px 8% 60px;
         }
         &__title-wrap {
           max-width: 350px;
@@ -182,11 +182,14 @@
             font-size: 54px;
             text-align: center;
         }
+        &__content {
+          padding:  0 9%;
+        }
         &__description {
             display: flex;
             flex-wrap: wrap;
             max-width: 620px;
-            padding: 0 50px 44px;
+            padding: 0 0px 44px;
             margin:  0 auto;
             &-item {
                 width: 50%;
@@ -302,7 +305,7 @@
 @include desktop-lg() {
   .split {
     &__content {
-      margin-top: 4%;
+      margin-top: 2%;
     }
   }
 }
