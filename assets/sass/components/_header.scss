@@ -1,0 +1,19 @@
+.header {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 54px;
+  }
+  &__logo {
+    height: 52px;
+    width: 107px;
+  }
+}
+@include tablet() {
+  .header {
+    &__logo {
+        margin-bottom: 78px;
+    }
+  }
+}

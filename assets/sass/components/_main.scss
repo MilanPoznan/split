@@ -1,0 +1,256 @@
+.split {
+    background-color: #f2f4f4;
+    &__wrapper {
+        // display: flex;
+        // flex-flow: column;
+        // justify-content: center;
+        // align-items: center;
+        display: grid;
+        grid-template-rows: [title] auto [content] auto [image] auto [newsletter] auto;
+        grid-template-areas: "title" "description" "main-image" "newsletter";
+        padding: 54px 10% 58px;
+    }
+    // &__logo {
+    //
+    //     // margin-bottom: 52px;
+    // }
+    &__title-wrap {
+       grid-area: title;
+       margin-bottom: 46px;
+
+    }
+    &__title {
+        // padding: 0 20px;
+        text-align: center;
+        font-family: $avenir-lite;
+        font-size: 38px;
+        line-height: 1.05;
+        color: $text-gray;
+        span {
+            font-family: $avenir-demi;
+        }
+    }
+    &__description {
+        display: inline;
+        grid-area: description;
+        padding: 0 6%;
+        margin-bottom: 44px;
+        &-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 34px;
+            font-family: $source-regular;
+            font-size: 18px;
+            line-height: 0.89;
+            color: $text-light-gray;
+        }
+        &-dott {
+            position: relative;
+            display: inline-block;
+            height: 16px;
+            width: 16px;
+            margin: 0 15px;
+            background-color: rgba(23, 185, 147, 0.3);
+            border-radius: 50%;
+        }
+        &-dott:after {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            height: 6px;
+            width: 6px;
+            background-color: $green;
+            border-radius: 50%;
+        }
+    }
+    &__main-image {
+      grid-area: main-image;
+    }
+    &__cards-image {
+        height: 173px;
+        width: 285px;
+        margin-bottom: 58px;
+    }
+    &__newsletter {
+        width: 100%;
+        max-width: 362px;
+        grid-area: newsletter;
+        &-text {
+            margin-bottom: 25px;
+            font-family: $source-regular;
+            font-size: 14px;
+            line-height: 1.15;
+            color: $light-gray;
+            text-align: center;
+        }
+        &-input {
+            display: block;
+            height: 54px;
+            width: 100%;
+            margin-bottom: 16px;
+            text-align: center;
+            border-radius: 30px;
+            border-color: transparent;
+            font-family: $source-regular;
+            font-size: 14px;
+            color: $lighter-gray;
+        }
+        &-input:focus {
+            outline: none;
+        }
+        &-button {
+            display: block;
+            height: 54px;
+            width: 100%;
+            font-family: $avenir-cn;
+            font-size: 14px;
+            font-weight: bold;
+            color: $white;
+            background-image: linear-gradient(to top, #00b489 50%, #33c3a1);
+            border-radius: 30px;
+        }
+    }
+    // Footer section
+    &__footer {
+        background-color: $white;
+        &-wrapper {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            padding: 53px 0 50px;
+        }
+        &-logo {
+            height: 59px;
+            width: 73px;
+            margin-bottom: 22px;
+        }
+        &-info {
+            margin-bottom: 55px;
+            font-family: $source-regular;
+            font-size: 12px;
+            line-height: 1.67;
+            color: $light-gray;
+        }
+        &-social {
+            display: flex;
+            flex-flow: row;
+            &-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 40px;
+                width: 40px;
+                background-color: $green;
+                border-radius: 50%;
+            }
+            &-container:first-of-type {
+                margin-right: 22px;
+            }
+        }
+    }
+}
+
+@include tablet() {
+    .split {
+        &__wrapper {
+            padding: 0px 10% 60px;
+        }
+        &__title-wrap {
+          max-width: 350px;
+          width: 60%;
+          margin: 0 auto;
+        }
+
+        &__title {
+            width: 100%;
+            margin-bottom: 52px;
+            font-size: 54px;
+            text-align: center;
+        }
+        &__description {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 540px;
+            padding: 0 50px 44px;
+            margin:  0 auto;
+            &-item {
+                width: 50%;
+            }
+            &-item:last-of-type {
+                margin-bottom: 34px;
+            }
+        }
+        &__main-image {
+          text-align: center;
+        }
+        &__cards-image {
+            height: 304px;
+            width: 497px;
+            margin-bottom: 58px;
+        }
+        &__newsletter {
+          margin: 0 auto;
+        }
+
+        &__footer {
+            &-wrapper {
+                display: grid;
+                grid-template-columns: 84px 123px 1fr 102px;
+                grid-auto-rows: 140px;
+                padding: 0 50px;
+            }
+            &-logo {
+                height: 50px;
+                width: 62px;
+                margin-bottom: 0;
+                grid-column-start: 1;
+                grid-column-end: 2;
+            }
+            &-info {
+                margin-bottom: 0;
+                grid-column-start: 2;
+                grid-column-end: 3;
+            }
+            &-social {
+                grid-column-start: 4;
+                grid-column-end: 5;
+            }
+        }
+    }
+}
+
+@include desktop() {
+  .split {
+    &__wrapper {
+      grid-template-columns: 600px [main-image] 100px [margin-col] 516px [content];
+      grid-template-rows: [first-row] auto [second-row] auto [newsletter] auto;
+      grid-template-areas: " main-image . title"
+                            " main-image . description"
+                            " main-image . newsletter";
+      // grid-template-areas: "title" "description" "main-image" "newsletter";
+
+    }
+    &__title-wrap {
+      width: 100%;
+      margin: 0;
+
+    }
+    &__title {
+      text-align: left;
+
+    }
+    &__description {
+      padding-left: 0px;
+      &-dott {
+        margin: 0 15px 0 0;
+      }
+    }
+    &__cards-image {
+      height: 367px;
+    }
+    &__newsletter {
+      margin: 0;
+    }
+  }
+}

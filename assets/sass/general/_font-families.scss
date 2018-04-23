@@ -1,0 +1,30 @@
+/****************
+* Font families *
+****************/
+
+@font-face {
+  font-family: 'AvenirNextLTPro-UltLt';
+  src: url('assets/fonts/AvenirNextLTPro-UltLt.otf');
+  // font-weight: normal;
+  // font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirNextLTPro-Demi';
+  src: url('assets/fonts/AvenirNextLTPro-Demi.otf');
+}
+
+@font-face {
+  font-family: 'AvenirNextLTPro-Cn';
+  src: url('assets/fonts/AvenirNextLTPro-Cn.otf');
+}
+
+@font-face {
+  font-family: 'SourceSansPro-Regular';
+  src: url('assets/fonts/SourceSansPro-Regular.ttf');
+}
+
+$avenir-lite: 'AvenirNextLTPro-UltLt';
+$avenir-demi: 'AvenirNextLTPro-Demi';
+$avenir-cn: 'AvenirNextLTPro-Cn';
+$source-regular: 'SourceSansPro-Regular';
