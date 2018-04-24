@@ -11,7 +11,7 @@
     &__wrapper {
         display: grid;
         grid-template-rows: [title] auto [content] auto [image] auto [newsletter] auto;
-        grid-template-areas: "title" "description" "main-image" "newsletter";
+        grid-template-areas: "main-image" "title" "description" "newsletter";
         padding: 54px 0 58px;
     }
     &__title-wrap {
@@ -130,6 +130,30 @@
             flex-flow: column;
             align-items: center;
             padding: 53px 0 50px;
+
+        }
+        &-left {
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 45px;
+
+        }
+        &-center {
+          margin-bottom: 45px;
+          p {
+            font-family: "SourceSansPro-Regular";
+            font-size: 12px;
+            line-height: 1.67;
+            color: #6e6e6e;
+            text-align: center;
+          }
+          img {
+            width: 120px;
+            height: auto;
+            margin-top: 20px;
+          }
         }
         &-logo {
             height: 59px;
@@ -137,7 +161,6 @@
             margin-bottom: 22px;
         }
         &-info {
-            margin-bottom: 55px;
             font-family: $source-regular;
             font-size: 12px;
             line-height: 1.67;
@@ -213,10 +236,11 @@
 
         &__footer {
             &-wrapper {
-                display: grid;
-                grid-template-columns: 84px 123px 1fr 102px;
-                grid-auto-rows: 140px;
-                padding: 0 50px;
+                display: flex;
+                flex-flow: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 40px 50px;
             }
             &-logo {
                 height: 50px;
@@ -233,6 +257,26 @@
             &-social {
                 grid-column-start: 4;
                 grid-column-end: 5;
+            }
+            &-left {
+              margin-bottom: 0;
+              flex-flow: row;
+              max-width: 200px;
+              img {
+                margin-right: 20px;
+              }
+            }
+            &-center {
+              margin-bottom: 0;
+              display: flex;
+              flex-flow: row;
+              align-items: center;
+              p {
+                margin-right: 20px;
+              }
+              img {
+                margin: 0;
+              }
             }
         }
     }
@@ -295,10 +339,27 @@
     &__footer {
       height: 140px;
         &-wrapper {
-            padding: 0 76px;
+          padding: 0 76px;
+          height: 100%;
+
+
+        }
+        &-left {
+          max-width: 220px;
+          align-items: center;
+          img {
+            margin-right: 25px;
+          }
+        }
+        &-center {
+          img {
+            width: 130px;
+            height: auto;
+          }
         }
     }
   }
+
   form {
     display: flex;
   }
