@@ -38,9 +38,9 @@
             display: flex;
             margin-bottom: 34px;
             font-family: $source-regular;
-            font-size: 18px;
+            font-size: 16px;
+            line-height: 23px;
             color: $text-light-gray;
-            line-height: 1.25;
             .dott-container {
                 position: absolute;
                 top: 0;
@@ -55,7 +55,7 @@
             display: inline-block;
             height: 16px;
             width: 16px;
-            margin: 0 15px;
+            margin: 5px 15px 0;
             background-color: rgba(23, 185, 147, 0.3);
             border-radius: 50%;
         }
@@ -192,7 +192,8 @@
             padding: 0 0px 44px;
             margin:  0 auto;
             &-item {
-                width: 50%;
+                width: 46%;
+                margin-right: 4%;
             }
             &-item:last-of-type {
                 margin-bottom: 34px;
@@ -263,8 +264,9 @@
     &__description {
       padding: 0 0 44px;
       &-dott {
-        margin: 0 15px 0 0;
+        margin: 5px 15px 0 0;
       }
+
     }
     &__main-image {
         margin-top: 40px;
