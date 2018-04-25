@@ -168,7 +168,19 @@
         }
         &-social {
             display: flex;
-            flex-flow: row;
+            flex-flow: column;
+            &-text {
+                margin-bottom: 20px;
+                font-family: "SourceSansPro-Regular";
+                font-size: 12px;
+                line-height: 1.67;
+                color: #6e6e6e;
+                text-align: center;
+            }
+            &-links {
+                display: flex;
+                flex-flow: row;
+            }
             &-container {
                 display: flex;
                 justify-content: center;
@@ -255,8 +267,14 @@
                 grid-column-end: 3;
             }
             &-social {
+                flex-flow: row;
+                align-items: center;
                 grid-column-start: 4;
                 grid-column-end: 5;
+                &-text {
+                    margin-bottom: 0;
+                    padding-right: 20px;
+                }
             }
             &-left {
               margin-bottom: 0;
