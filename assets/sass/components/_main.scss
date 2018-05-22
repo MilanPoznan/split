@@ -69,6 +69,14 @@
             background-color: $green;
             border-radius: 50%;
         }
+        &-info-text {
+          margin: 40px 0;
+          font-family: $source-regular;
+          font-size: 16px;
+          line-height: 23px;
+          text-align: center;
+          color: $text-light-gray;
+        }
     }
     &__main-image {
       grid-area: main-image;
@@ -309,6 +317,9 @@
       padding: 0 0 44px;
       &-dott {
         margin: 5px 15px 0 0;
+      }
+      &-info-text {
+        text-align: left;
       }
 
     }
